@@ -39,7 +39,7 @@ Para ejecutar este proyecto en local, sigue estas instrucciones:
 
 4.  **Ejecutar la aplicación:**
     ```bash
-    streamlit run app.py
+    python -m streamlit run app.py
     ```
 
 ---
