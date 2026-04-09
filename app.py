@@ -86,7 +86,6 @@ if st.button("GENERAR RECOMENDACIONES 🎬", key="btn_principal"):
                     messages=[
                         {
                             "role": "system", 
-                            # AQUÍ ES DONDE PEGAS EL CONTENIDO NUEVO:
                             "content": f"""Eres un experto cinéfilo de élite.
 HISTORIAL: {contexto_historial}
 ⚠️ PROHIBICIÓN: No recomiendes bajo ningún concepto estas películas: {peliculas_vistas_str}
@@ -119,7 +118,7 @@ if st.session_state.respuesta_ia:
     # Limpiamos bloques vacíos
     bloques = [b for b in bloques if "**" in b]
 
-    # --- CAMBIO AQUÍ: Inicializamos la lista para evitar el error de NameError ---
+    # Inicializamos la lista para evitar el error de NameError
     vistas_ahora = [] 
 
     # Crear 3 columnas para las tarjetas de películas
@@ -137,7 +136,7 @@ if st.session_state.respuesta_ia:
             titulo_txt = titulo.group(1) if titulo else f"Película {i+1}"
             titulos_deteccion.append(titulo_txt)
 
-            # Tarjeta visual con HTML/CSS (He añadido una altura fija de 280px para que queden simétricas)
+            # Tarjeta visual con HTML/CSS
             st.markdown(f"""
                 <div style="
                     border: 2px solid #D4AF37;
